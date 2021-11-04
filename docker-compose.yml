@@ -1,0 +1,29 @@
+version: "3.3"
+services:
+  db:
+    build: ./db
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: test
+    restart: always
+    ports:
+      - 3306:3306
+  web:
+    build: .
+    environment:
+      MYSQL_DATABASE: test
+      MYSQL_USER: root
+      MYSQL_PASSWORD: password
+      MYSQL_HOST: db
+      EXPRESS_PORT: 80
+      EXPRESS_HOST: 0.0.0.0
+    ports:
+      - "80:80"
+    volumes:
+      - ./:/usr/src
+      - /usr/src/node_modules
+    depends_on:
+      - db
+    restart: on-failure
+
+

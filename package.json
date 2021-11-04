@@ -1,0 +1,35 @@
+{
+  "name": "docker_web_app",
+  "version": "1.0.0",
+  "description": "node.js on docker",
+  "author": "first last <bumsun@yandex.ru>",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "browser": {
+    "png-js": "./node_modules/png-js/png.js"
+  },
+  "browserify-shim": {
+    "png-js": "PNG"
+  },
+  "dependencies": {
+    "express": "^4.16.1",
+    "jimp": "^0.16.1",
+    "image-size": "^1.0.0",
+    "mysql2": "^2.3.2",
+    "body-parser": "^1.19.0",
+    "node-fetch": "^2.6.6",
+    "cors": "^2.8.5",
+    "express-fileupload": "^1.2.1",
+    "@canvas/image": "^1.0.0",
+    "image-type": "^4.1.0",
+    "jpeg-js": "^0.4.1",
+    "browserify-shim": "^3.8.0",
+    "jpeg-js": "0.0.4",
+    "png-js": "^0.1.1"
+  }
+}
+
+
+    
